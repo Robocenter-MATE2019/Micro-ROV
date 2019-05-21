@@ -1,0 +1,26 @@
+﻿<Window x:Name="MainWindow1" x:Class="Micro_ROV.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Micro_ROV"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525" Loaded="MainWindow1_Loaded" Closed="MainWindow1_Closed" KeyDown="MainWindow1_KeyDown" KeyUp="MainWindow1_KeyUp">
+    <Grid>
+        <Label x:Name="Data_Label" Content="{Binding Path=SendingData, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="50" Margin="10,261,0,0" VerticalAlignment="Top" Width="373"/>
+        <Button x:Name="Button1" Content="Start" HorizontalAlignment="Left" Height="50" Margin="388,237,0,0" VerticalAlignment="Top" Width="119" Click="Button1_Click"/>
+        <TextBox x:Name="TextBox_COMport" HorizontalAlignment="Left" Height="34" Margin="402,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="92" Background="#FFB6B6B6" TextChanged="TextBox_COMport_TextChanged"/>
+        <RadioButton x:Name="PadioButton_9600" Content="9600" HorizontalAlignment="Left" Height="27" Margin="402,81,0,0" VerticalAlignment="Top" Width="115" GroupName="Bods" Checked="PadioButton_9600_Checked" IsChecked="True"/>
+        <RadioButton x:Name="PadioButton_115200" Content="115200" HorizontalAlignment="Left" Height="27" Margin="402,113,0,0" VerticalAlignment="Top" Width="115" GroupName="Bods" Checked="PadioButton_115200_Checked"/>
+        <Label x:Name="COMPort_Label" Content="COM_Port:" HorizontalAlignment="Left" Height="23" Margin="402,145,0,0" VerticalAlignment="Top" Width="92"/>
+        <Grid x:Name="Image_Grid" HorizontalAlignment="Left" Height="256" VerticalAlignment="Top" Width="383">
+            <Image x:Name="Main_Image" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <ComboBox x:Name="CameraSelectCB" HorizontalAlignment="Left" Height="35" Margin="388,10,0,0" VerticalAlignment="Top" Width="106">
+            <ComboBoxItem x:Name="DefaultCameraCB" Height="35" Content="DefaultCamera" IsSelected="True" Selected="DefaultCameraCB_Selected"/>
+            <ComboBoxItem x:Name="FirstCameraCB" Height="35" Content="FirstCamera" Selected="FirstCameraCB_Selected"/>
+            <ComboBoxItem x:Name="SecondCameraCB" Height="35" Content="SecondCamera" Selected="SecondCameraCB_Selected"/>
+        </ComboBox>
+
+    </Grid>
+</Window>
